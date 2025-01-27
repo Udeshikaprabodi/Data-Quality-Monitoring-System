@@ -13,3 +13,8 @@ def check_missing_values(df):
 def check_duplicates(df):
     duplicates = df.duplicated().sum()
     print(f"Number of duplicate rows: {duplicates}")
+
+# Check for logical inconsistencies (e.g., temperature in extreme ranges)
+def check_inconsistencies(df):
+    inconsistent_temps = df[(df['Temperature (C)'] < -50) | (df['Temperature (C)'] > 50)]
+    print(f"Inconsistent temperature values:\n{inconsistent_temps}")
