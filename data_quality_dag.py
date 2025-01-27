@@ -7,3 +7,12 @@ import pandas as pd
 def run_data_quality_checks():
     df = pd.read_csv('weatherHistory.csv')
     # Data quality checks here (same as the Python code above)
+
+# Define the DAG
+dag = DAG(
+    'data_quality_check',
+    description='Data quality check DAG',
+    schedule_interval='@daily',  # Runs daily
+    start_date=datetime(2025, 1, 1),
+    catchup=False,
+)
