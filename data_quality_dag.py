@@ -23,3 +23,6 @@ data_quality_task = PythonOperator(
     python_callable=run_data_quality_checks,
     dag=dag,
 )
+
+# Set the task to run
+data_quality_task
