@@ -23,3 +23,13 @@ def check_inconsistencies(df):
 def check_outliers(df):
     outliers = df[df['Wind Speed (km/h)'] > 200]
     print(f"Outliers in wind speed:\n{outliers}")
+
+# Perform all checks
+def run_data_quality_checks(df):
+    check_missing_values(df)
+    check_duplicates(df)
+    check_inconsistencies(df)
+    check_outliers(df)
+
+# Run the checks
+run_data_quality_checks(df)
