@@ -18,3 +18,8 @@ def check_duplicates(df):
 def check_inconsistencies(df):
     inconsistent_temps = df[(df['Temperature (C)'] < -50) | (df['Temperature (C)'] > 50)]
     print(f"Inconsistent temperature values:\n{inconsistent_temps}")
+
+# Check for outliers (e.g., wind speed above 200 km/h)
+def check_outliers(df):
+    outliers = df[df['Wind Speed (km/h)'] > 200]
+    print(f"Outliers in wind speed:\n{outliers}")
