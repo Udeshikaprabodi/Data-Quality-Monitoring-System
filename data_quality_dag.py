@@ -16,3 +16,10 @@ dag = DAG(
     start_date=datetime(2025, 1, 1),
     catchup=False,
 )
+
+# Define the task
+data_quality_task = PythonOperator(
+    task_id='run_data_quality_checks',
+    python_callable=run_data_quality_checks,
+    dag=dag,
+)
